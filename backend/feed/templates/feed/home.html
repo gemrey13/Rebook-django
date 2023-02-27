@@ -7,10 +7,10 @@
 		<div class="header-content">
 			<form method="post" enctype="multipart/form-data" class="form-post">
 				{% csrf_token %}
-				<input type="text" name="title" placeholder="Title">
-				<textarea name="content" cols="20" rows="5" placeholder="Enter some Text"></textarea>
-				<input type="file" name="image" accept=".jpg, .jpeg, .png">
-				<button type="submit">Post</button>
+				<input type="text" name="title" placeholder="Title" required>
+				<textarea name="content" cols="20" rows="5" placeholder="Enter some Text" required></textarea>
+				<input type="file" name="image" accept=".jpg, .jpeg, .png" required>
+				<button type="submit" class="button-54">Post</button>
 			</form>
 		</div>
 	</div>
