@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static "css/sidebar.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/home.css" %}">
+	<title>Rebook</title>
+</head>
+<body>
+	<nav class="sidenav">
+		<a href="#">Home</a>
+		<a href="#">Profile</a>
+		<a href="#">People</a>
+		<a href="#">About</a>
+		<a href="#">Sign-out</a>
+	</nav>
+
+	{% block body %}
+	{% endblock body %}
+</body>
+</html>
