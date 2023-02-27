@@ -2,45 +2,36 @@
 
 {% block body %}
 <main>
-	<div class="header">
-	  <h2>Blog Name</h2>
+	<div class="header" style="display:block;">
+	  <button type="button" class="header-collapsible">Create a Post</button>
+		<div class="header-content">
+			<form method="post" enctype="multipart/form-data" class="form-post">
+				{% csrf_token %}
+				<input type="text" name="title" placeholder="Title">
+				<textarea name="content" cols="20" rows="5" placeholder="Enter some Text"></textarea>
+				<input type="file" name="image" accept=".jpg, .jpeg, .png">
+				<button type="submit">Post</button>
+			</form>
+		</div>
 	</div>
 
 	<div class="row">
 	  <div class="leftcolumn">
-	    <div class="card">
-	      <h2>TITLE HEADING</h2>
-	      <h5>Title description, Dec 7, 2017</h5>
-	      <div class="fakeimg" style="height:200px;">Image</div>
-	      <p>Some text..</p>
-	    </div>
-	    <div class="card">
-	      <h2>TITLE HEADING</h2>
-	      <h5>Title description, Sep 2, 2017</h5>
-	      <div class="fakeimg" style="height:200px;">Image</div>
-	      <p>Some text..</p>
+	  	<div id="scroll-placeholder">
+	  	{% for post in posts %}
+	  		<div class="card">
+		      <h2>{{post.title}}</h2>
+		      <h5>{{post.created_at|date:'M d Y h:i:s'}}</h5>
+		      <img src="{{post.image.url}}" class="fakeimg">
+		      <p>{{post.content}}</p>
+		    </div>
+	  	{% endfor %}
 	    </div>
 
-	    <div class="card">
-	      <h2>TITLE HEADING</h2>
-	      <h5>Title description, Sep 2, 2017</h5>
-	      <div class="fakeimg" style="height:200px;">Image</div>
-	      <p>Some text..</p>
-	    </div>
 
-	    <div class="card">
-	      <h2>TITLE HEADING</h2>
-	      <h5>Title description, Sep 2, 2017</h5>
-	      <div class="fakeimg" style="height:200px;">Image</div>
-	      <p>Some text..</p>
-	    </div>
-	    
-	    <div class="card">
-	      <h2>TITLE HEADING</h2>
-	      <h5>Title description, Sep 2, 2017</h5>
-	      <div class="fakeimg" style="height:200px;">Image</div>
-	      <p>Some text..</p>
-	    </div>
+
+
+
 	  </div>
 
 	  <div class="rightcolumn">

@@ -7,24 +7,31 @@
   body {
     font-family: Arial;
     margin: 0;
+    padding: 20px 45px 0;
   }
   .card {
     border-radius: 1em;
     margin-top: 50px;
     }
+
+  .card h2 {
+    font-size: 28px;
+  }
+  .card h5 {
+    font-size: 20px;
+  }
+  .card p {
+    font-size: 20px;
+  }
 }
+
+
 
 body {
-  background: #edc7b7;
+  background: #1f1a24;
+
 }
 
-/* Header/Blog Title */
-.header {
-  padding: 10px;
-  font-size: 20px;
-  text-align: center;
-  background: white;
-}
 
 /* Create two unequal columns that floats next to each other */
 /* Left column */
@@ -43,16 +50,29 @@ body {
 /* Fake image */
 .fakeimg {
   background-color: #aaa;
-  width: 100%;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
   padding: 20px;
+  object-fit: contain;
 }
 
 /* Add a card effect for articles */
 .card {
-  background-color: #123c69;
-  color: #edf5e1;
+  background-color: #332940;
+  color: #fff;
   padding: 20px;
-  margin-top: 20px;
+  margin: 20px 0 0;
+}
+
+.card h2 {
+  color: #fff;
+}
+
+.card p {
+  color: #03dac6;
 }
 
 /* Clear floats after the columns */
@@ -78,11 +98,105 @@ body {
   }
 
   .header {
-    display: none;
+    display: block;
   }
 
   .leftcolumn, .rightcolumn {
     width: 100%;
     padding: 0px;
   }
+}
+
+
+.header-collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.header-collapsible:hover {
+  background-color: #555;
+}
+
+.header-content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+
+input[type=text] {
+  display: block;
+  width: 80%;
+  padding: 6px 12px;
+  background: rgb(31, 32, 35, 0.8);
+  border: 1px solid rgb(60, 63, 68);
+  border-radius: 4px;
+  font-size: 18px;
+  color: rgb(247, 248, 248);
+  height: 46px;
+  appearance: none;
+  transition: border 0.15s ease 0s;
+  }
+
+input[type=text]:focus{
+      outline: none;
+      box-shadow: none;
+      border-color: rgb(100, 153, 255);
+}
+
+input[type=text]::placeholder {
+  color: white;
+}
+
+textarea {
+  width: 80%;
+  border-radius: 5px;
+  background: rgb(249, 250, 250);
+  border: 1px solid rgb(181, 189, 196);
+  font-size: 16px;
+  height: 40px;
+  line-height: 24px;
+  padding: 7px 8px;
+  color: rgb(8, 9, 10);
+  box-shadow: none;
+  height: 20%;
+}
+
+textarea:focus{
+      background-color: #fff;
+      border-color: #3b49df;
+      box-shadow: 1px 1px 0 #3b49df;
+  }
+
+
+.form-post {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 100px;
+}
+
+input[type=file]::file-selector-button {
+  margin: 10px 20px;
+  border: none;
+  background: #084cdf;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+
+input[type=file]::file-selector-button:hover {
+  background: #0d45a5;
 }

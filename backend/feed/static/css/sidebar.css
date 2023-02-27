@@ -14,17 +14,28 @@
 
 
   .sidenav a {
+    margin-top: 0.6em;
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 25px;
-    color: #edf5e1;
+    color: #bb86fc;
     display: block;
   }
 
   .sidenav a:hover {
+    background-color: #ddd;
     color: black;
   }
-
+  
+  .sign-out {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  .sign-out a:hover {
+    background-color: red;
+    color: #fff;
+  }
 
   main {
     margin-left: 160px; /* Same as the width of the sidenav */
@@ -41,10 +52,9 @@
     font-family: Arial, Helvetica, sans-serif;
   }
 
-
   .topnav {
     overflow: hidden;
-    background-color: #333;
+    background-color: black;
     position: relative;
   }
 
@@ -53,15 +63,15 @@
   }
 
   .topnav a {
-    color: #edf5e1;
+    color: #bb86fc;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 23px;
     display: block;
   }
 
   .topnav a.icon {
-    background: black;
+    background: #121212;
     display: block;
     position: absolute;
     right: 0;
@@ -74,7 +84,7 @@
   }
 
   .active {
-    background-color: #04AA6D;
+    background-color: black;
     color: white;
   }
 }

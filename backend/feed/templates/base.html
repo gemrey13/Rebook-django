@@ -10,6 +10,10 @@
 	<title>Rebook</title>
 </head>
 
+<style>
+
+</style>
+
 <body>
 
 
@@ -21,7 +25,10 @@
 		<a href="#">Profile</a>
 		<a href="#">People</a>
 		<a href="#">About</a>
-		<a href="#">Sign-out</a>
+		<div class="sign-out">
+			
+			<a href="#">Sign-out</a>
+		</div>
 	  </div>
 	  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
 	    <i class="fa fa-bars"></i>
@@ -33,18 +40,9 @@
 	{% endblock body %}
 
 
+<script type="text/javascript" src="{% static "js/navbar.js" %}"></script>
 
-<script>
-function myFunction() {
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
-</script>
-
+<script type="text/javascript" src="{% static "js/home.js" %}"></script>
 
 </body>
 </html>
