@@ -2,10 +2,20 @@
   box-sizing: border-box;
 }
 
+@media screen and (min-width: 800px) {
+
+  body {
+    font-family: Arial;
+    margin: 0;
+  }
+  .card {
+    border-radius: 1em;
+    margin-top: 50px;
+    }
+}
+
 body {
-  font-family: Arial;
-  padding: 20px;
-  background: #f1f1f1;
+  background: #edc7b7;
 }
 
 /* Header/Blog Title */
@@ -39,7 +49,8 @@ body {
 
 /* Add a card effect for articles */
 .card {
-  background-color: white;
+  background-color: #123c69;
+  color: #edf5e1;
   padding: 20px;
   margin-top: 20px;
 }
@@ -60,9 +71,18 @@ body {
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 799px) {
+  body {
+    font-family: Arial;
+    margin: 0;
+  }
+
+  .header {
+    display: none;
+  }
+
   .leftcolumn, .rightcolumn {
     width: 100%;
-    padding: 0;
+    padding: 0px;
   }
 }
