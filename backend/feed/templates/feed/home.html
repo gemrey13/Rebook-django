@@ -3,6 +3,8 @@
 
 {% block body %}
 <main>
+	
+<h1>{{error_message}}</h1>
 	<div class="header" style="display:block;">
 	  <button type="button" class="header-collapsible">Create a Post</button>
 		<div class="header-content">
@@ -12,7 +14,7 @@
 					<input type="text" name="title" placeholder="Title" required class="title">
 					<textarea name="content" cols="20" rows="5" placeholder="Enter some Text" required></textarea>
 					<input type="file" name="image" accept=".jpg, .jpeg, .png" required>
-					<button type="submit" class="button-54">Post</button>
+					<button type="submit" class="button-54" name="post_btn">Post</button>
 				</form>
 			{% else %}
 				<h3>Please Login</h3>

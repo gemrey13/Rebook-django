@@ -1,5 +1,8 @@
 
-.modal, .signUpModal {
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -23,7 +26,7 @@
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 40%;
 }
 
 /* The Close Button */
@@ -39,4 +42,28 @@
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+
+.username, .password{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.login {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.login:hover {
+  opacity: 0.8;
 }
