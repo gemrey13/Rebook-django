@@ -59,9 +59,9 @@
 	    <form method="post">
 	    	{% csrf_token %}
 	    	<label for="username">Username</label>
-	    	<input type="text" name="username" id="username" class="username">
+	    	<input type="text" name="username" id="username" class="username" required>
 	    	<label for="password">Password</label>
-	    	<input type="password" name="password" id="password" class="password">
+	    	<input type="password" name="password" id="password" class="password" required>
 	    	<button type="submit" class="login" name="login_btn">Login</button>
 	    </form>
 	  </div>
