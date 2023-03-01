@@ -28,7 +28,7 @@
   }
 
 
-  input[type=text] {
+  .title {
     display: block;
     width: 80%;
     padding: 6px 12px;
@@ -42,13 +42,13 @@
     transition: border 0.15s ease 0s;
     }
 
-  input[type=text]:focus{
+  .title:focus{
         outline: none;
         box-shadow: none;
         border-color: rgb(100, 153, 255);
   }
 
-  input[type=text]::placeholder {
+  .title::placeholder {
     color: white;
   }
 
@@ -177,7 +177,7 @@ body {
     padding: 0px;
   }
 
-  input[type=text] {
+  .title {
       display: block;
       width: 100%;
       margin: 1em 0 1em;
@@ -192,13 +192,13 @@ body {
       transition: border 0.15s ease 0s;
       }
 
-    input[type=text]:focus{
+    .title:focus{
           outline: none;
           box-shadow: none;
           border-color: rgb(100, 153, 255);
     }
 
-    input[type=text]::placeholder {
+    .title::placeholder {
       color: white;
     }
 

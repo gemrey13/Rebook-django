@@ -9,7 +9,7 @@
 			{% if user.is_authenticated %}
 				<form method="post" enctype="multipart/form-data" class="form-post">
 					{% csrf_token %}
-					<input type="text" name="title" placeholder="Title" required>
+					<input type="text" name="title" placeholder="Title" required class="title">
 					<textarea name="content" cols="20" rows="5" placeholder="Enter some Text" required></textarea>
 					<input type="file" name="image" accept=".jpg, .jpeg, .png" required>
 					<button type="submit" class="button-54">Post</button>

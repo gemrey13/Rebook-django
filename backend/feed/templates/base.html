@@ -57,14 +57,23 @@
 	    <span class="closeLogin close">&times;</span>
 	    <h1>Login</h1>
 	    <form>
-	    	<input type="text" name="username">
-	    	<input type="password" name="password">
-	    	<button type="submit">Login</button>
+	    	<input type="text" name="username" class="username">
+	    	<input type="password" name="password" class="password">
+	    	<button type="submit" class="login">Login</button>
 	    </form>
 	  </div>
 	</div>
 
-
+<style type="text/css">
+.username, .password{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+</style>
 
 
 	{% block body %}
