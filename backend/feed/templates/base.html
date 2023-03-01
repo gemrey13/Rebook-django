@@ -6,29 +6,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="{% static "css/sidebar.css" %}">
 	<link rel="stylesheet" type="text/css" href="{% static "css/home.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Rebook</title>
 </head>
-
-<style>
-
-</style>
-
 <body>
 
-
+	
 <!-- Top Navigation Menu -->
 	<div class="topnav sidenav">
 	  <a href="#home" class="active">Rebook</a>
 	  <div id="myLinks" class="sidenav">
-	    <a href="{% url 'home' %}">Home</a>
-		<a href="#">Profile</a>
-		<a href="#">People</a>
-		<a href="#">About</a>
-		<div class="sign-out">
-			
-			<a href="#">Sign-out</a>
-		</div>
+	  	{% if user.is_authenticated %}
+		    <a href="{% url 'home' %}">Home</a>
+			<a href="#">Profile</a>
+			<a href="#">People</a>
+			<a href="#">About</a>
+			<div class="sign-out">
+				<a href="#">Logout</a>
+			</div>
+		{% else %}
+			<a id="loginBtn">Login</a>
+			<a id="signUpBtn">Signup</a>
+	  	{% endif %}
+
 	  </div>
 	  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
 	    <i class="fa fa-bars"></i>
@@ -36,13 +37,45 @@
 	</div>
 
 
+
+<!-- Modal -->
+
+
+	<div id="signUpModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h1>SignUP</h1>
+			<p>Some text in the Modal..</p>
+		</div>
+	</div>
+
+
+
+
+	<div id="loginModal" class="modal">
+	  <div class="modal-content">
+	    <span class="closeLogin close">&times;</span>
+	    <h1>Login</h1>
+	    <form>
+	    	<input type="text" name="username">
+	    	<input type="password" name="password">
+	    	<button type="submit">Login</button>
+	    </form>
+	  </div>
+	</div>
+
+
+
+
 	{% block body %}
 	{% endblock body %}
 
 
-<script type="text/javascript" src="{% static "js/navbar.js" %}"></script>
 
+
+<script type="text/javascript" src="{% static "js/navbar.js" %}"></script>
 <script type="text/javascript" src="{% static "js/home.js" %}"></script>
+
 
 </body>
 </html>
