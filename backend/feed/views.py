@@ -9,7 +9,7 @@ from .models import *
 
 
 def home(request):
-	posts = Post.objects.all()
+	posts = Post.objects.all()[:2]
 	current_user_id = request.user.id
 	if request.method == "POST" and 'login_btn' in request.POST:
 		username = request.POST['username']

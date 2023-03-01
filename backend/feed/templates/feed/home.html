@@ -3,9 +3,9 @@
 
 {% block body %}
 <main>
-
-<h1>{{error_message}}</h1>
-<h1 style="color:white;">{{current_user_id}}</h1>
+{% if error_message %}
+	<h1 style="color: white;">{{error_message}}</h1>
+{% endif %}
 	<div class="header" style="display:block;">
 	  <button type="button" class="header-collapsible">Create a Post</button>
 		<div class="header-content">
