@@ -23,7 +23,7 @@
 			<a href="#">People</a>
 			<a href="#">About</a>
 			<div class="sign-out">
-				<a href="#">Logout</a>
+				<a href="{% url 'logout' %}?next=/feed">Logout</a>
 			</div>
 		{% else %}
 			<a id="loginBtn">Login</a>

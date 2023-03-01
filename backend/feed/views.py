@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -11,6 +11,7 @@ from .models import *
 def home(request):
 	posts = Post.objects.all()[:2]
 	current_user_id = request.user.id
+	
 	if request.method == "POST" and 'login_btn' in request.POST:
 		username = request.POST['username']
 		password = request.POST['password']
