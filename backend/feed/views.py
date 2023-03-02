@@ -1,8 +1,9 @@
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import User
-from django.contrib import messages
+
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+
 
 from .models import *
 
@@ -43,7 +44,7 @@ def home(request):
 
 		if password1 != password2:
 			error_message = 'Password does not match'
-			return redirect('home')
+			
 
 		elif User.objects.filter(username=username).exists(): 
 			error_message = 'Username already exists!'
@@ -54,7 +55,8 @@ def home(request):
 			
 
 		elif password1 == password2:
-			user = User.objects.create(username=username, first_name=first_name, last_name=last_name, email=email, password=password1)
+			password = make_password(password1)
+			user = User.objects.create(username=username, first_name=first_name, last_name=last_name, email=email, password=password)
 			user.save()
 			error_message = 'You are now register!'
 			
