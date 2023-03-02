@@ -1,5 +1,6 @@
 from django.contrib.auth import authenticate, login, logout
-
+from django.contrib.auth.models import User
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
@@ -11,7 +12,7 @@ from .models import *
 def home(request):
 	posts = Post.objects.all()[:2]
 	current_user_id = request.user.id
-	
+
 	if request.method == "POST" and 'login_btn' in request.POST:
 		username = request.POST['username']
 		password = request.POST['password']
@@ -28,10 +29,35 @@ def home(request):
 		content = request.POST['content']
 		image = request.FILES['image']
 		post = Post(author=request.user, title=title, content=content, image=image)
-		
+
 		post.save()
 		return redirect('home')
 
+	elif request.method == "POST" and 'signup_btn' in request.POST:
+		username = request.POST['username']
+		first_name = request.POST['first_name']
+		last_name = request.POST['last_name']
+		email = request.POST['email']
+		password1 = request.POST['password1']
+		password2 = request.POST['password2']
+
+		if password1 != password2:
+			error_message = 'Password does not match'
+			return redirect('home')
+
+		elif User.objects.filter(username=username).exists(): 
+			error_message = 'Username already exists!'
+
+
+		elif User.objects.filter(email=email).exists():
+			error_message = 'Email already exists!'
+			
+
+		elif password1 == password2:
+			user = User.objects.create(username=username, first_name=first_name, last_name=last_name, email=email, password=password1)
+			user.save()
+			error_message = 'You are now register!'
+			
 	else:
 		error_message = ''
 

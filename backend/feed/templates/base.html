@@ -44,8 +44,29 @@
 	<div id="signUpModal" class="modal">
 		<div class="modal-content">
 			<span class="close">&times;</span>
-			<h1>SignUP</h1>
-			<p>Some text in the Modal..</p>
+			<h1>Signup</h1>
+		    <form method="post">
+		    	{% csrf_token %}
+		    	<label for="username">Username</label>
+		    	<input type="text" name="username" id="username" class="username" required>
+
+		    	<label for="email">Email</label>
+		    	<input type="text" name="email" id="email" class="username" required>
+
+		    	<label for="first_name">First Name</label>
+		    	<input type="text" name="first_name" id="first_name" class="username" required>
+
+		    	<label for="last_name">Last Name</label>
+		    	<input type="text" name="last_name" id="last_name" class="username" required>
+
+		    	<label for="password">Password</label>
+		    	<input type="password" name="password1" id="password" class="password" required>
+
+		    	<label for="password">Confirm Password</label>
+		    	<input type="password" name="password2" id="password" class="password" required>
+
+		    	<button type="submit" class="login" name="signup_btn">Signup</button>
+		    </form>
 		</div>
 	</div>
 
