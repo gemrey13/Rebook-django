@@ -5,8 +5,9 @@
 <main>
 {% if error_message %}
 	<h1 style="color: white;">{{error_message}}</h1>
+{% else %}
+	<h1 style="color: white;">{{request.user}}</h1>
 {% endif %}
-	<h1>{{request.user.id}}</h1>
 	<div class="header" style="display:block;">
 	  <button type="button" class="header-collapsible">Create a Post</button>
 		<div class="header-content">
